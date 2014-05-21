@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Roave</title>
+
+    <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,300italic,400,400italic,600,700,900&subset=latin,latin-ext' rel='stylesheet'/>
+    <link href='//fonts.googleapis.com/css?family=Source+Code+Pro|Archivo+Narrow:400,700|Arimo:400,700' rel='stylesheet'/>
+    <%# for headings link href='http://fonts.googleapis.com/css?family=Archivo+Narrow:400,700' rel='stylesheet' %>
+
+    <meta name="viewport" content="width=device-width, user-scalable=no"/>
+
+    <link rel='stylesheet' href='/css/reset.css' />
+    <script src="//google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+    <link rel='stylesheet' href='//jmblog.github.io/color-themes-for-google-code-prettify/css/themes/tomorrow-night.css' />
+    <link rel='stylesheet' href='/css/styles.css' />
+    <link rel='stylesheet' href='//code.ionicframework.com/ionicons/1.4.1/css/ionicons.min.css' />
+  </head>
+  <body>
+    <div class="bgfaker"></div>
+
+    <header>
+      <div class="inner">
+        <div class="left">
+          <a class="logo" href=""><!--<img src="logo.png" />-->Roave</a>
+
+          <div class="links">
+            <a href="">Projects</a>
+            <a href="">Timesheets</a>
+            <a href="">Income</a>
+            <a href="">Invoices</a>
+            <a href="">Calendar</a>
+          </div>
+        </div>
+
+        <div class="right">
+          <div class="search">
+            <input type="text" placeholder="Search..."/>
+          </div>
+          <div class="menu">
+          <a href=""><i class="ion-gear-b"></i></a><!--
+       --><a class="users" href=""><i class="ion-ios7-people"></i></a><!--
+       --><a href=""><i class="ion-log-out"></i></a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="container">
+      <%= yield %>
+    </div>
+
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script>
+      $('a.users').click(function (e) {
+        $(this).toggleClass('selected');
+        $('.sidebar').toggleClass('hide');
+        e.preventDefault();
+      })
+    </script>
+  </body>
+</html>
